@@ -1,10 +1,8 @@
-import { Router, Request, Response } from "express";
-import { createUserController } from "./controllers/users/CreateUserController";
-import { validateSchema } from "./middlewares/validateSchema";
-import { createUserSchema } from "./schemas/userSchema";
+import { Router } from "express";
+import { createUserController } from "./controllers/user/CreateUserController";
 
 const router = Router();
 
-router.post("/users", validateSchema(createUserSchema),new createUserController().handle);   
+router.get("/users", new createUserController().handle )  
 
 export { router }; 
