@@ -49,7 +49,7 @@ model Product{
   banner String
   disable Boolean @default(false)
 
-  item Item[]
+  items Item[]
 
   category_id String
   category Category @relation(fields: [category_id], references: [id], onDelete: Cascade)
