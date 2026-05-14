@@ -14,7 +14,7 @@ class createUserController {
             email: email,
             password: password
         });
-     res.json({message: user  });    
+     res.json(user);    
     }
 }
 
