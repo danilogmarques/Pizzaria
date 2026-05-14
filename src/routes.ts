@@ -1,7 +1,8 @@
 import { Router } from "express";
 import { createUserController } from "./controllers/user/CreateUserController";
 import { validateSchema } from "./midllewares/validateSchema";
-import { createUserSchema } from "./schemas/userSchema";
+import { createUserSchema ,authUserSchema } from "./schemas/userSchema";
+import { authUserController } from "./controllers/user/AuthUserController"
 const router = Router();
 
 router.post(
@@ -9,4 +10,10 @@ router.post(
     validateSchema(createUserSchema),
     new createUserController().handle )  
 
-export { router };  
+    
+    router.post(
+        "/session",
+        validateSchema(authUserSchema),
+        new authUserController().handle
+    )
+    export { router };  

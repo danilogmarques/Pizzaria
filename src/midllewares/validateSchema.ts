@@ -21,6 +21,9 @@ export const validateSchema =
                     }))
                 })
             }
+            return res.status(500).json({
+                error: "Erro interno no servidor"
+            })
         }
     };
 
